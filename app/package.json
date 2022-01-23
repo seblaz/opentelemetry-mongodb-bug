@@ -1,0 +1,23 @@
+{
+  "name": "opentelemetry-mongodb-bug",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:seblaz/opentelemetry-mongodb-bug.git",
+  "author": "seblaz <sebastian.blazquez96@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@opentelemetry/api": "^1.0.4",
+    "@opentelemetry/instrumentation": "^0.27.0",
+    "@opentelemetry/instrumentation-express": "^0.27.0",
+    "@opentelemetry/instrumentation-http": "^0.27.0",
+    "@opentelemetry/instrumentation-mongodb": "^0.27.0",
+    "@opentelemetry/sdk-trace-base": "^1.0.1",
+    "@opentelemetry/sdk-trace-node": "^1.0.1",
+    "express": "^4.17.2",
+    "mongodb": "3.7.3"
+  },
+  "scripts": {
+    "start": "node src"
+  }
+}

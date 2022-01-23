@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  app:
+    stdin_open: true
+    image: node:14.18.3-alpine3.15
+    working_dir: "/app"
+    command: sh -c "yarn install && yarn start"
+    ports:
+      - "4000:4000"
+    volumes:
+      - "./app:/app"
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: mongodb://root:example@mongo:27017/cafe?authSource=admin
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:5.0.5-focal
+    ports:
+      - "27017:27017"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
